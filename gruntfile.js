@@ -10,7 +10,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: 'scss/**/*.scss',
+        files: 'assets/scss/**/*.scss',
         tasks: ['sass:dev'],
         options: {
           atBegin: true,
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           outputStyle: 'nested'
         },
         files: {
-          'css/style.css' : 'scss/style.scss'
+          'assets/css/style.css' : 'assets/scss/style.scss'
         }
       },
       prod: {
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'css/prod/style.css' : 'scss/style.scss'
+          'assets/css/prod/style.css' : 'assets/scss/style.scss'
         }
       }
     }
