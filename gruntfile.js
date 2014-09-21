@@ -11,7 +11,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: 'scss/**/*.scss',
-        tasks: ['sass'],
+        tasks: ['sass:dev'],
         options: {
           atBegin: true,
           interrupt: true,
@@ -21,13 +21,22 @@ module.exports = function(grunt) {
       }
     },
     sass: {
-      options: {
-        sourceMap: false,
-        outputStyle: 'nested'
-      },
-      dist: {
+      dev: {
+        options: {
+          sourceMap: false, //set to true when the node.js bug is fixed
+          outputStyle: 'nested'
+        },
         files: {
           'css/style.css' : 'scss/style.scss'
+        }
+      },
+      prod: {
+        options: {
+          sourceMap: false,
+          outputStyle: 'compressed'
+        },
+        files: {
+          'css/prod/style.css' : 'scss/style.scss'
         }
       }
     }
