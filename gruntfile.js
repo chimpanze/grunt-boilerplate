@@ -5,7 +5,6 @@ module.exports = function(grunt) {
       server: {
         options: {
           port: 1337,
-          //keepalive: true
         }
       }
     },
