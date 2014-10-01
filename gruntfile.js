@@ -21,7 +21,7 @@ module.exports = function(grunt) {
         options: {
           atBegin: true,
           interrupt: true,
-          spawn: false,
+          spawn: true,
           livereload: true
         }
       }
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     sass: {
       dev: {
         options: {
-          sourceMap: true, //maybe an upadate is necessary
+          sourceMap: true,
           outputStyle: 'nested'
         },
         files: {
