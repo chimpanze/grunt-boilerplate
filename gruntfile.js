@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    watch: { //rethink this task
+    watch: {
       css: {
         files: 'assets/scss/**/*.scss',
         tasks: ['sass:dev'],
@@ -45,14 +45,26 @@ module.exports = function(grunt) {
           'assets/css/prod/style.css' : 'assets/scss/style.scss'
         }
       }
+    },
+    uglify: {
+      my_targets: {
+        files: {
+          'assets/js/prod/minified.js': ['assets/js/*.js']
+        }
+      }
     }
   });
   // cssmin, uglify, usemin, image optimization,
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default',[
     'connect',
     'watch'
+  ]);
+  grunt.registerTask('build',[
+    'uglify',
+    'sass:prod'
   ]);
 };
