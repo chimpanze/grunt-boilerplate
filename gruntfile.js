@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     },
     watch: {
       css: {
-        files: 'assets/scss/**/*.scss',
+        files: 'assets/dev/scss/**/*.scss',
         tasks: ['sass:dev'],
         options: {
           atBegin: true,
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
           outputStyle: 'nested'
         },
         files: {
-          'assets/css/style.css' : 'assets/scss/style.scss'
+          'assets/dev/css/style.css' : 'assets/dev/scss/style.scss'
         }
       },
       prod: {
@@ -42,14 +42,14 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'assets/css/prod/style.css' : 'assets/scss/style.scss'
+          'assets/prod/css/style.css' : 'assets/dev/scss/style.scss'
         }
       }
     },
     uglify: {
       my_targets: {
         files: {
-          'assets/js/prod/minified.js': ['assets/js/*.js']
+          'assets/prod/js/minified.js': ['assets/dev/js/*.js']
         }
       }
     }
