@@ -52,6 +52,15 @@ module.exports = function(grunt) {
           'assets/prod/js/minified.js': ['assets/dev/js/*.js']
         }
       }
+    },
+    phantomcss: {
+      options: {
+        mismatchTolerance: 0.05,
+        screenshots: 'css-regression-tests/baselines',
+        results: 'css-regression-tests/results',
+        viewportSize: [1440, 900]
+      },
+      src: [ 'css-regression-tests/phantomcss.js' ]
     }
   });
   // cssmin, uglify, usemin, image optimization,
@@ -59,12 +68,20 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-phantomcss');
+
   grunt.registerTask('default',[
     'connect',
     'watch'
   ]);
+
   grunt.registerTask('build',[
     'uglify',
     'sass:prod'
   ]);
+
+  grunt.registerTask('regression-test', [
+    'connect',
+    'phantomcss'
+  ])
 };
