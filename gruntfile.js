@@ -74,8 +74,14 @@ module.exports = function(grunt) {
     'connect',
     'watch'
   ]);
+
   grunt.registerTask('build',[
     'uglify',
     'sass:prod'
   ]);
+
+  grunt.registerTask('regression-test', [
+    'connect',
+    'phantomcss'
+  ])
 };
