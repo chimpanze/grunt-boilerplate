@@ -17,4 +17,4 @@ The Sass dev task includes Source Maps and will output CSS in a nested (usual CS
 The Sass prod task doesn't include Source Maps and will output CSS compressed.
 
 ## CSS Regression Testing
-CSS regression testing is possible through Phantomjs. Specifiy your test cases inside the phantomcss.js file you find in /css-regression-test.
+CSS regression testing is possible through Phantomjs and the [grunt-phantomcss fork](https://github.com/anselmh/grunt-phantomcss). Specifiy your test cases inside the phantomcss.js file, you find in /css-regression-test. If you want to read more about this topic just follow this [link](http://www.phase2technology.com/blog/css-testing-with-phantomcss-phantomjs-casperjs-and-grunt/).
