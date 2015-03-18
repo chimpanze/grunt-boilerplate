@@ -3,3 +3,17 @@
 body {
   background-color: lightgreen; //just for testing
 }
+
+
+.cta-link {
+  padding: 1em 2em;
+  color: #fff;
+  background-color: tomato;
+  border: 1px solid lightblue;
+
+
+  &:hover {
+    background-color: lightblue;
+    border-color: tomato;
+  }
+}
