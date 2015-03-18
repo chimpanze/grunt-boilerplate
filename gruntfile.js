@@ -52,6 +52,15 @@ module.exports = function(grunt) {
           'assets/prod/js/minified.js': ['assets/dev/js/*.js']
         }
       }
+    },
+    phantomcss: {
+      options: {
+        mismatchTolerance: 0.05,
+        screenshots: 'css-regression-tests/baselines',
+        results: 'css-regression-tests/results',
+        viewportSize: [1440, 900]
+      },
+      src: [ 'css-regression-tests/phantomcss.js' ]
     }
   });
   // cssmin, uglify, usemin, image optimization,
