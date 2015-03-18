@@ -7,11 +7,14 @@ Just git clone the repo and install everything with `npm install`.
 Afterwards just type in `grunt`.
 
 
-## Sass Task
+## Sass Tasks
 This Grunt file includes two Sass tasks — one for development, one for production.
 
 ### sass:dev
 The Sass dev task includes Source Maps and will output CSS in a nested (usual CSS style) way.
 
 ### sass:prod
-Tha Sass prod task doesn't include Source Maps and will output CSS compressed.
+The Sass prod task doesn't include Source Maps and will output CSS compressed.
+
+## CSS Regression Testing
+CSS regression testing is possible through Phantomjs. Specifiy your test cases inside the phantomcss.js file you find in /css-regression-test.
