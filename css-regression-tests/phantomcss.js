@@ -1,4 +1,4 @@
-casper.start('http://localhost:9001/index.html')
+casper.start('http://localhost:1337/index.html')
 .then(function(){
   phantomcss.screenshot('.cta-link', 'cta-link');
 })
