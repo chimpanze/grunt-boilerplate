@@ -54,16 +54,22 @@ module.exports = function(grunt) {
       }
     },
     phantomcss: {
-      options: {
-        mismatchTolerance: 0.05,
-        screenshots: 'css-regression-tests/baselines',
-        results: 'css-regression-tests/results',
-        viewportSize: [1440, 900]
+      options: { mismatchTolerance: 0.05 },
+
+      viewportSmall: {
+        options: {
+          screenshots: 'css-regression-tests/viewportSmall/baselines',
+          results: 'css-regression-tests/viewportSmall/results',
+          viewportSize: [375, 667]
+        },
+        src: [ 'css-regression-tests/phantomcss.js' ]
       },
-      src: [ 'css-regression-tests/phantomcss.js' ]
+      // viewportMiddle: {},
+      // viewportLarge: {}
     }
   });
-  // cssmin, uglify, usemin, image optimization,
+
+  //TODO: usemin, image optimization,
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-connect');
