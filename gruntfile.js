@@ -22,10 +22,10 @@ module.exports = function(grunt) {
         files: 'assets/dev/scss/**/*.scss',
         tasks: ['sass:dev'],
         options: {
-          atBegin: true,
-          interrupt: true,
-          spawn: true,
-          livereload: true
+        atBegin: true,
+        interrupt: true,
+        spawn: true,
+        livereload: true
         }
       }
     },
@@ -95,7 +95,6 @@ module.exports = function(grunt) {
           cwd: 'assets/dev/',
           src: ['images/jpg/**/*.jpg'],
           dest: 'assets/prod/',
-
         }]
       },
       gif: {
@@ -105,7 +104,7 @@ module.exports = function(grunt) {
           src: ['images/gif/**/*.gif'],
           dest: 'assets/prod/'
         }]
-      },
+      }
     }
   });
 
@@ -130,5 +129,21 @@ module.exports = function(grunt) {
   grunt.registerTask('regression-test', [
     'connect',
     'phantomcss'
+  ]);
+
+  grunt.registerTask('optimize-images', [
+    'imagemin'
+  ]);
+
+  grunt.registerTask('optimize-png', [
+    'imagemin:png'
+  ]);
+
+  grunt.registerTask('optimize-jpg', [
+    'imagemin:jpg'
+  ]);
+
+  grunt.registerTask('optimize-gif', [
+    'imagemin:gif'
   ]);
 };
