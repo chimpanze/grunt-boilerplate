@@ -1,3 +1,5 @@
+var mozjpeg = require('imagemin-mozjpeg');
+
 module.exports = function(grunt) {
 
   'use strict';
@@ -70,6 +72,40 @@ module.exports = function(grunt) {
       },
       // viewportMiddle: {},
       // viewportLarge: {}
+    },
+
+    imagemin: {
+      options: {
+        optimizationLevel: 3,
+        progressive: true,
+        interlaced: true,
+        use: [mozjpeg()]
+      },
+      png: {
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/png/**/*.png'],
+          dest: 'assets/prod/'
+        }]
+      },
+      jpg: {
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/jpg/**/*.jpg'],
+          dest: 'assets/prod/',
+
+        }]
+      },
+      gif: {
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/gif/**/*.gif'],
+          dest: 'assets/prod/'
+        }]
+      },
     }
   });
 
@@ -79,6 +115,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-phantomcss');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
 
   grunt.registerTask('default',[
     'connect',
