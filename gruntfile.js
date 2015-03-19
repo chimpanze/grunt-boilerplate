@@ -14,6 +14,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     watch: {
       css: {
         files: 'assets/dev/scss/**/*.scss',
@@ -26,6 +27,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     sass: {
       dev: {
         options: {
@@ -46,6 +48,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     uglify: {
       my_targets: {
         files: {
@@ -53,6 +56,7 @@ module.exports = function(grunt) {
         }
       }
     },
+
     phantomcss: {
       options: { mismatchTolerance: 0.05 },
 
@@ -89,5 +93,5 @@ module.exports = function(grunt) {
   grunt.registerTask('regression-test', [
     'connect',
     'phantomcss'
-  ])
+  ]);
 };
