@@ -26,3 +26,10 @@ Uglify smashes all JavaScript files inside the `assets/dev/js` folder (and inclu
 
 ## CSS Regression Testing
 CSS regression testing is possible through Phantomjs and the [grunt-phantomcss fork](https://github.com/anselmh/grunt-phantomcss). Specifiy your test cases inside the phantomcss.js file, you find in /css-regression-test. If you want to read more about this topic just follow the [link](http://www.phase2technology.com/blog/css-testing-with-phantomcss-phantomjs-casperjs-and-grunt/).
+
+## Image Optimization
+There are different image optimization tasks available:
+* optimize-images — optimizes all images
+* optimize-png — optimizes all images located in `assets/dev/images/png`
+* optimize-jpg — optimizes all images located in `assets/dev/images/jpg`
+* optimize-gif — optimizes all images located in `assets/dev/images/gif`
