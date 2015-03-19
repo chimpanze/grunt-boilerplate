@@ -82,14 +82,30 @@ module.exports = function(grunt) {
         use: [mozjpeg()]
       },
       png: {
-        files: { 'assets/prod/images/png':'assets/dev/images/png/**/*.png' }
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/png/**/*.png'],
+          dest: 'assets/prod/'
+        }]
       },
       jpg: {
-        files: { 'assets/prod/images/jpg':'assets/dev/images/jpg/**/*.jpg' }
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/jpg/**/*.jpg'],
+          dest: 'assets/prod/',
+
+        }]
       },
       gif: {
-        files: { 'assets/prod/images/gif':'assets/dev/images/gif/**/*.gif' }
-      }
+        files: [{
+          expand: true,
+          cwd: 'assets/dev/',
+          src: ['images/gif/**/*.gif'],
+          dest: 'assets/prod/'
+        }]
+      },
     }
   });
 
